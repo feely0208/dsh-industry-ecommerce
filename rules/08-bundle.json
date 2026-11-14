@@ -1,0 +1,15 @@
+{
+  "id": "ECO-BUNDLE",
+  "title": "搭售/捆绑销售或默认勾选附加服务",
+  "severity": "high",
+  "source": "《电子商务法》第19条 —— 电子商务经营者搭售商品或者服务，应当以显著方式提请消费者注意，不得将搭售商品或者服务作为默认同意的选项",
+  "advice": "下单页的搭售/保险/优惠券包等附加项一律默认不勾选，并以显著方式单独列示价格；命中处确认是否为默认勾选实现。",
+  "check": {
+    "type": "file-pattern",
+    "pattern": "搭售|捆绑销售|默认勾选|默认选中.{0,10}(?:保险|优惠券|会员)|checked[^\\n]{0,20}(?:insurance|coupon|vip)",
+    "flags": "gi",
+    "exts": [".md", ".txt", ".html", ".js", ".ts", ".json", ".vue", ".jsx", ".tsx"],
+    "when": "(?:订单|下单|结算|checkout|cart|购物车)",
+    "max": 20
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "ECO-FIX-ORDER",
+  "title": "出现刷单/虚假评价类用语",
+  "severity": "high",
+  "source": "《电子商务法》第17条 —— 不得以虚构交易、编造用户评价等方式进行虚假或引人误解的商业宣传；《反不正当竞争法》第8条",
+  "advice": "刷单是行政违法行为且构成平台封店理由。相关话术/脚本/供应商合同立即停止并清理。",
+  "check": {
+    "type": "file-pattern",
+    "pattern": "刷单|补单|刷好评|删差评|代写评价|水军|养号刷量",
+    "flags": "gi",
+    "exts": [".md", ".txt", ".html", ".js", ".ts", ".json", ".yaml", ".yml"],
+    "when": "(?:商品|产品|商城|店铺|goods|product|shop|评价|review)",
+    "max": 20
+  }
+}
